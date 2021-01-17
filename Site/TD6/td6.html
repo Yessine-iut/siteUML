@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang = 'fr' >
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="../Styles/td.css" />
+    <title>TD6</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="section">
+        <header>
+            <img src="../Image/uml.jpg" alt="Mon image" height="300" width="801">
+       
+           
+            <nav class="sommaire">
+                <ul>
+                   <li><a href="../Index.html"> <img src="../Image/home.png" alt="Home" height="30"></a></li>
+                   <li><a> Travaux dirigés</a><ul><li><a href="../TD1/td1.html">TD1</a></li><li><a href="../TD2/td2.html">TD2</a></li><li><a href="../TD3/td3.html">TD3</a></li><li><a href="../TD4/td4.html">TD4</a></li>
+                    <li><a href="../TD5/td5.html">TD5</a></li><li><a href="td6.html">TD6</a></li><li><a href="../TD7/td7.html">TD7</a></li><li><a href="../TD8/td8.html">TD8</a></li></ul></li>
+                   
+                    
+                   
+                    <li><a href="../QCM/qcm.html"> Auto-évaluation </a> </li>
+                    <li> <a href="../a_propos.html"> À propos </a></li>
+                    </ul>    
+            </nav></header></div>
+      
+             <div class="corps">   
+                <article>
+            <h2>Les diagrammes de séquence</h2>
+                    <h3>Qu'est-ce que les diagrammes de séquence ?</h3>
+                    <p>Les diagrammes de séquence décrivent les intéractions entre les acteurs et le système avec un ordre chronologique.</p>
+                    <h3>Notation</h3>
+                    <h4>Ligne de vie</h4>
+                    <p>C'est une ligne en pointillé représentant la vie d'un objet ou d'un acteur. Le système est représenté réctangulairement, l'interface avec un cercle, et les acteurs par un bonhomme.</p>
+                    <p>Exemple de ligne de vie d'un acteur :</p>
+                    <p><img src="../Image/lignevie.GIF" alt="vie" ></p>
+                    <p>Ligne de vie d'une interface :</p>
+                    <p><img src="../Image/lignedevieinterface.png" alt="vieinterface" ></p>
+                    <h4>Interaction (message)</h4>
+                    <p>Il existe plusieurs intéractions, dans un diagramme de séquence les intéractions se font entre les différentes lignes de vies, il y a des intéractions pour appeler une méthode, des intéractions pour envoyer un signal ou encore des messages pour créer un objet. Les messages sont représentés par une flèche à part dans le cas où il y a création d'objet ou on met un trait en pointillé pour dire qu'il y a eu création d'objet. Il peut également y avoir une réponse à un message qui est représenté par une flèche en pointillé, on appelle ça un message synchrone.</p>
+                    <p>Exemple de message synchrone :</p>
+                    <p><img src="../Image/messagesynchrone.png" alt="synchro" ></p>
+                    <p>Un message asynchrone n'aurait pas eu de retour en pointillé</p>
+                    <p>Exemple de construction et de déstruction d'objet</p>
+                    <p><img src="../Image/constructiondestru.jpg" alt="construction" ></p>
+                    <h4>Boucle, condition et option</h4>
+                    <p>Les trois se répresente avec un rectangle ayant en haut à gauche "loop" pour boucle, "alt" pour condition et "opt" pour option. Pour la boucle il doit y avoir marqué combien de fois l'action doit se faire tandis que alt doit dire les conditions à respecter pour faire ceci mais pas celà et opt simplement ce qui permet de faire l'option.</p>
+                    <p>Exemple :</p>
+                    <p><img src="../Image/boucleoptalt.png" alt="boucleopt" ></p>
+                    <p>Dans ce cas soit le code est correct et tout se passe bien soit le code est incorrect et on rentre dans une boucle qui refera les actions trois fois maximum c'est à dire si on a plus de trois échec alors le code ne sera plus vérifié.</p>
+                    
+                    
+                    
+                    <h3>Faire le diagramme de séquence</h3>
+                    <ol><li>La secrétaire saisit les informations sur la voiture.</li><li>Le système lui propose les voitures correspondant aux informations saisies.</li><li>La secrétaire sélectionne une des voitures.</li><li>Le système affiche les informations sur la voiture, plus les réparations réalisées, restantes, … et le prix dû.</li><li>La secrétaire demande à enregistrer un paiement.</li><li>Le système lui demande si c'est par CB ou en espèce.</li><li>La secrétaire sélectionne par CB.</li><li>Le système déclenche le lecteur de carte avec le prix dû.</li><li>Le lecteur de carte confirme le paiement au Système.</li><li>Le système enregistre le paiement, prépare la facture et propose de l'imprimer.</li><li>La secrétaire demande l'impression de la facture.</li></ol>
+                    <p>En ajoutant : <br/>
+                    Paiement en espèce : la secrétaire valide que le paiement a été effectué.<br/>
+                    On veut la possibilité d'interrompre le paiement en cas d'absence de moyen de paiement ou de plus de 3 tentatives de paiement.</p>
+                    <p>Cas 1 : On fait la ligne de vie de secrétaire qui sera acteur et la ligne de vie de notre système on aura une flèche de secrétaire à système car la secrétaire saisit les informations. On aura également une méthode verifie info dans le système pour savoir si les informations entrées par la secrétaire sont acceptable, on va faire une relation reflexive.<br/>
+                    Cas 2 : Le système répond c'est donc un message synchrone.<br/>
+                    Cas 3 : La secrétaire sélectionne des voitures donc la flèche va jusqu'à la ligne de vie du système.<br/>
+                    Cas 4 : Le système doit afficher le prix et les informations sur la voiture alors pour récuperer les informations il faut faire un get à la ligne de vie de la voiture, il faut donc représenter voiture dans le diagramme de séquence pour qu'ensuite nous ayons un retour de la voiture (le retour étant les informations) et avec ces informations le système calcul le prix et retourne les informations qu'il a obtenu ainsi que le prix.<br/>
+                 Cas 5 : La secrétaire demande à enregistrer un paiement, une fois de suite une flèche qui va jusqu'au système.<br/>
+                Cas 6: Le système répond, donc c'est un message synchrone, une flèche entre pointillé qui va de système à secrétaire en demandant quel est le mode de paiement.<br/>
+                    Cas 7 : La secrétaire demande par CB donc il y aura une flèche jusqu'au système.<br/>
+                    Cas 8 : Le système déclenche le lecteur de carte donc il y aura une action du système au lecteur de carte il faudra faire une ligne de vie du lecteur de carte.<br/>
+                    Cas 9 : On aura un retour du lecteur de carte donc une flèche en pointillé du lecteur de carte au système.</p>
+                    <p>On aura ceci :<br/>
+                    Cas 10 : Le système enregistre le paiement,prépare la facture et demande de l'imprimer donc on aura deux flèches reflexives qui sont enregistrer le paiement et preparer la facture qui seront des méthodes ayant pour attribut la facture. On aura une flèche du système à la secrétaire qui sera envoi facture<br/>
+                    Cas 11 : la secrétaire demande l'impression donc on aurau ne flèche de secrétaire à système.</p>
+                    <p>En prenant compte le "en ajoutant" on aura un alt qui permettra de pouvoir effectuer deux modes de paiement qui sont par CB ou pas espèce. Quand la personne choisit par espèce il y aura un valider le paiement qui va de secrétaire à système.<br/>
+                    Pour interrompre le paiement au bout de 3 fois il faut faire une boucle qui permet de compter le nombre d'echec de paiement, tant que selectionnerpaiement==NULL et echecdepaiement inférieur ou égal à 3 il y aura la boucle si ça dépasse on arrête le paiement.</p>
+                    
+                    <p>Nous obtenons ceci :</p>
+                    <p><img src="../Image/sequencefinal.png" alt="sequencefinal" height="800" width="600" ></p>
+                    
+                    <h3>A retenir</h3>
+                    <p>Il n'y aura jamais d'intéraction entre deux acteurs dans le diagramme de séquences.</p>
+                    
+        </article>
+               
+             </div>
+                 
+        
+            
+            
+            <!-- Footer -->
+					<footer class="conteneur"> 
+						<section class="baspage">
+                          
+								  <ul class="iut"><li><img src="../Image/sophia.png" alt="iut" height="60" width="80"></li>
+                                      <li><img src="../Image/iut.png" alt="logo" height="80" width="60"></li>
+                                      
+                                  </ul>
+                              <div class="auteur"><h2>Auteur</h2>
+                            <p>Rédigé par BEN EL BEY Yessine</p></div>
+                                   
+                            
+								  <ul class="social">
+                                    <li><a href="https://www.google.com/intl/fr/gmail/about/" target="_blank">
+                                        <img src="../Image/gmail.png" alt="gmail" height="42" width="42"></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank">
+                                        <img src="../Image/facebook.png" alt="facebook" height="42" width="42"></a></li>
+                                    <li><a href="https://discordapp.com/" target="_blank">
+                                        <img src="../Image/discord.png" alt="discord" height="42" width="42"></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank">
+                                        <img src="../Image/twitter.png" alt="twitter" height="42" width="42"></a></li>
+                                  </ul>
+                            
+				         </section>
+					</footer>
+        
+     
+    
+
+    </div>
+</body>
+    
+</html>

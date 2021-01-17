@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang = 'fr' >
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="../Styles/td.css" />
+    <title>TD3</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="section">
+        <header>
+            <img src="../Image/uml.jpg" alt="Mon image" height="300" width="801">
+       
+           
+            <nav class="sommaire">
+                <ul>
+                    <li><a href="../Index.html"> <img src="../Image/home.png" alt="Home" height="30"></a></li>
+                   <li><a> Travaux dirigés</a><ul><li><a href="../TD1/td1.html">TD1</a></li><li><a href="../TD2/td2.html">TD2</a></li><li><a href="td3.html">TD3</a></li><li><a href="../TD4/td4.html">TD4</a></li>
+                    <li><a href="../TD5/td5.html">TD5</a></li><li><a href="../TD6/td6.html">TD6</a></li><li><a href="../TD7/td7.html">TD7</a></li><li><a href="../TD8/td8.html">TD8</a></li></ul></li>
+                   
+                    
+                   
+                   <li><a href="../QCM/qcm.html"> Auto-évaluation </a> </li>
+                    <li> <a href="../a_propos.html"> À propos </a></li>
+                    </ul>    
+            </nav></header></div>
+      
+             <div class="corps">   
+                <article>
+              <h2>Diagrammes de cas d'utilisation - Description avancée</h2>
+                    <p>Ce td va se focaliser sur la description d'un cas d'utilisation avec des scénarios. Les scénarios sont une suite logique entre un acteur et le système.</p>
+                    <h3>Décrire le diagramme de cas d'utilisation avec des scénarios</h3>
+                    <p>Il y a plusieurs étapes pour faire cette description : <br/>
+                    Précondition <br/>
+                    Flots nominals/basiques<br/>
+                    Flots alternatifs<br/>
+                    Flots d'erreur<br/>
+                    Postconditions<br/>
+                    </p>
+                    
+                    <p>Les préconditions et les postconditions peuvent ne pas exister dans certains cas.</p>
+                    <p>Les préconditions sont des conditions qui doivent être fait pour que le scénario commence.<br/>
+                    Les postconditions est l'état du système après avoir fait le scénario, il y a des postconditions simplement pour clarifier les choses, il n'est pas obligatoire de le mettre c'est simplement pour que tout le monde comprenne ce qu'a engendré le scénario. Le flot nominal est le scénario principal sans erreur ou d'alternatif. Le flot alternatif est un scénario qui possède un petit changement par rapport au flot nominal et qui donc permet de faire ce changement et revenir dans le flot nominal, le flot alternatif est donc fini. Le flot d'erreur c'est quand ça ne se passe pas comme prévu et que le scénario ne peut pas se finir il y a donc un "stop". </p>
+                    <p>Nous allons faire le scénario de ce cas-ci :</p>
+                    <ol><li>Jean présente son badge, la machine l'identifie; puis il présente la puce associé à la peugeot 308 immatriculé 124PG06. Le système identifie la voiture et lui propose un début de réparation. Jean confirme qu'il s'agit d'un début de réparation. Le système lui propose : durite, niveaux, vidange. Jean sélectionne durite. Le système confirme la sélection.</li>
+   <li> Pierre présente son badge, la machine l'identifie; puis il présente le badge associé à la peugeot 308 immatriculé 124PG06. Pierre refuse la proposition de fin de réparation. Il demande à voir les travaux antérieurs.</li>
+    <li>Jean présente son badge, la machine l'identifie; puis il présente le badge associé à la peugeot 308 immatriculé 124PG06…. Jean confirme qu'il s'agit d'une fin de réparation. Le système confirme la fin de réparation par Jean.</li>
+    <li>Paul présente son badge, le SI ne parvient pas à l'identifier. Paul est invité à réessayer plus tard et en attendant de noter l'heure et la voiture dans un bloc note dédié.</li><li>Jean présente le badge de la voiture, le SI ne parvient pas à l'identifier. Jean est invité à réinitialiser le badge.</li></ol>
+                    <p>Ici on aura en précondition : La secrétaire a créee la fiche suiveuse.</p>
+                    <p>Après avoir fait ça nous allons faire les flots basiques. </p>
+                    <p>Nous allons remplir nos flots basiques au fur et à mesure des cas<br/>
+                        Cas 1 : Le mécanicien présente son badge au boitier spécialisé => Jean <br/>
+                    nous avons vus dans les précédents TD que le mécanicien doit présenter son badge au boitier pour qu'il soit identifier il faut prendre en considération tout ce que nous avons vu précédemment il doit y avoir un lien logique.<br/>
+                    On va avoir également comme flot basique : <br/>
+                    Le système l'identifie <br/>
+                    Le mécanicien présente la puce associée à la voiture => Jean <br/>
+                    Le système identifie la voiture et lui propose un début de réparation <br/>
+                    Le mécanicien confirme que c'est un début de réparation <br/>
+                    Le système lui propose plusieurs types de réparations<br/>
+                    Le mécanicien choisi un ou plusieurs types de réparation <br/>
+                    Le système confirme la sélection</p>
+                    <p>En lisant les autres cas nous voyons qu'il n'y a pas d'autre flots basiques donc on a pour flots basiques : </p>
+                    <ol><li>Le mécanicien présente son badge au boitier spécialisé =>Jean</li><li> Le système l'identifie</li><li>Le mécanicien présente la puce associée à la voiture => Jean</li><li>Le système identifie la voiture et lui propose un début de réparation</li><li>Le mécanicien confirme que c'est un début de réparation</li><li>Le système lui propose plusieurs types de réparations</li><li> Le mécanicien choisi un ou plusieurs types de réparation</li><li> Le système confirme la sélection</li></ol>
+        <p>Cas 2 : Nous voyons que le début est similaire à notre flot basique et que le changement est en 4. De plus il demande de voir les travaux intérieurs donc il y a un retour possible à la 8 quand le système confirme la selection. On aura donc ceci :<br/>
+        4.1 Le système identifie la voiture et lui propose une fin de réparation<br/>
+        4.2 Le mécanicien ne confirme pas qu’il s’agit d’une fin de réparation=>Pierre<br/>
+        4.3 Le mécanicien demande de voir les travaux intérieurs=>Pierre<br/>
+        Retour à 8</p>
+        <p>Cas 3 : Nous voyons également que c'est similaire à notre flot basique c'est donc un flot alternatif on va avoir :<br/>
+        4.1 : Le système identifie la voiture et lui propose une fin de réparation<br/>
+        4.2 : Le mécanicien confirme que c’est une fin de réparation => Jean<br/>
+        Retour à 8</p>
+            <p>Cas 4 : Nous voyons qu'il y a un début semblable mais qu'il ne peut pas y avoir de retour possible aux flots basiques donc c'est un flot d'erreur et nous avons donc ceci : <br/>
+        2.1 Le système n’identifie pas le mécanicien=>Paul<br/>
+        2.2 Le système propose au mécanicien de réessayer plus tard et de noter l’heure et la voiture dans un bloc note dédié=>Paul</p>     
+        <p>Cas 5 : C'est également un flot d'erreur car le flot s'arrête sans retour aux flots basiques, il est obligé d'arrêter il y a une erreur on aura ceci :<br/>
+        4.1 Le système n’identifie pas la voiture<br/>
+        4.2 Le système propose au mécanicien de réinitialiser son badge =>Jean<br/></p>
+        <p>Après avoir terminé le scénario on a donc les postconditions qui ne sont pas obligatoire ici ça serait "la fiche suiveuse a été rempli"</p>
+        <p>Notre scénario complet est donc :<br></p>
+        <p>Description : Remplissage de la fiche suiveuse<br/>
+           Préconditions : La secrétaire a créee la fiche suiveuse</p>
+        <p>Flots basiques :</p>
+        <ol><li>Le mécanicien présente son badge au boitier spécialisé =>Jean</li><li> Le système l'identifie</li><li>Le mécanicien présente la puce associée à la voiture => Jean</li><li>Le système identifie la voiture et lui propose un début de réparation</li><li>Le mécanicien confirme que c'est un début de réparation</li><li>Le système lui propose plusieurs types de réparations</li><li> Le mécanicien choisi un ou plusieurs types de réparation</li><li> Le système confirme la sélection</li></ol>
+    <p>Flots alternatifs :<br/>
+      4.1 Le système identifie la voiture et lui propose une fin de réparation<br/>
+        4.2 Le mécanicien ne confirme pas qu’il s’agit d’une fin de réparation=>Pierre<br/>
+        4.3 Le mécanicien demande de voir les travaux intérieurs=>Pierre<br/>
+        Retour à 8</p>
+    <p>4.1 : Le système identifie la voiture et lui propose une fin de réparation<br/>
+        4.2 : Le mécanicien confirme que c’est une fin de réparation => Jean<br/>
+        Retour à 8</p>
+    <p>Flots d'erreurs</p>
+    <p> 2.1 Le système n’identifie pas le mécanicien=>Paul<br/>
+        2.2 Le système propose au mécanicien de réessayer plus tard et de noter l’heure et la voiture dans un bloc note dédié=>Paul</p>
+    <p> 4.1 Le système n’identifie pas la voiture<br/>
+        4.2 Le système propose au mécanicien de réinitialiser son badge =>Jean<br/></p>
+    <p>Postconditions</p>
+    <p>La fiche suiveuse a été rempli</p>
+    <h3>A retenir</h3>
+    <p>Les étapes du scénario : <br/>
+    Préconditions<br/>
+    Flots nominals<br/>
+    Flots alternatifs<br/>
+    Flots d'erreurs<br/>
+    Postconditions</p>
+    <h3>Les erreurs à ne pas commetre</h3>
+    <p>Ne pas mettre de retour dans un flot alternatif<br/>
+       Mettre un retour dans un flot d'erreur</p>
+        </article>
+               
+             </div>
+                 
+        
+            
+            
+            <!-- Footer -->
+					<footer class="conteneur"> 
+						<section class="baspage">
+                          
+								  <ul class="iut"><li><img src="../Image/sophia.png" alt="iut" height="60" width="80"></li>
+                                      <li><img src="../Image/iut.png" alt="logo" height="80" width="60"></li>
+                                      
+                                  </ul>
+                              <div class="auteur"><h2>Auteur</h2>
+                            <p>Rédigé par BEN EL BEY Yessine</p></div>
+                                   
+                            
+								  <ul class="social">
+                                    <li><a href="https://www.google.com/intl/fr/gmail/about/" target="_blank">
+                                        <img src="../Image/gmail.png" alt="gmail" height="42" width="42"></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank">
+                                        <img src="../Image/facebook.png" alt="facebook" height="42" width="42"></a></li>
+                                    <li><a href="https://discordapp.com/" target="_blank">
+                                        <img src="../Image/discord.png" alt="discord" height="42" width="42"></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank">
+                                        <img src="../Image/twitter.png" alt="twitter" height="42" width="42"></a></li>
+                                  </ul>
+                            
+				         </section>
+					</footer>
+        
+     
+    
+
+    </div>
+</body>
+    
+</html>

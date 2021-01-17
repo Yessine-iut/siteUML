@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang = 'fr' >
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="../Styles/td.css" />
+    <title>TD2</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="section">
+        <header>
+            <img src="../Image/uml.jpg" alt="Mon image" height="300" width="801">
+       
+           
+            <nav class="sommaire">
+                <ul>
+                   <li><a href="../Index.html"> <img src="../Image/home.png" alt="Home" height="30"></a></li>
+                   <li><a> Travaux dirigés</a><ul><li><a href="../TD1/td1.html">TD1</a></li><li><a href="td2.html">TD2</a></li><li><a href="../TD3/td3.html">TD3</a></li><li><a href="../TD4/td4.html">TD4</a></li>
+                    <li><a href="../TD5/td5.html">TD5</a></li><li><a href="../TD6/td6.html">TD6</a></li><li><a href="../TD7/td7.html">TD7</a></li><li><a href="../TD8/td8.html">TD8</a></li></ul></li>
+                    
+                   
+                   <li><a href="../QCM/qcm.html"> Auto-évaluation </a> </li>
+                    <li> <a href="../a_propos.html"> À propos </a></li>
+                    </ul>    
+            </nav></header></div>
+      
+             <div class="corps">   
+                <article>
+              <h2>Les relations entre cas d'utilisation</h2>
+                    <p>Ce TD va surtout se focaliser sur les relations entre cas d'utilisation. Nous avions vu les différentes relations dans le TD précédent.<br/>
+                    <p>Rappel :</p> 
+                    <p>L'inclusion (include)<br/>
+                             L'extension (extend)<br/>
+                             La spécialisation (généralisation)</p>
+                   <p>L'inclusion se modélise en pointillé avec le terme include, ça permet de factoriser une relation. L'inclusion n'est pas optionnel, il est obligatoire que l'acteur ou le système fasse l'include. Nous faisons A et nous sommes obligé de faire B en faisant A ce n'est pas un choix c'est une obligation.</p>
+                    <p>L'extension se modélise en pointillé avec un sens inverse à toutes les autres relations suivie d'une notation extends. L'extension est optionnelle, nous faisons A et en faisant A nous avons le droit de faire B  mais ce n'est qu'un droit ce n'est pas une obligation, on choisit de le faire ou pas.</p>
+                    <p>La généralisation se modélise en une flèche pleine blanche. Elle communique une obligation de faire un cas mais de différentes manières. Il est obligatoire de faire un des choix pour faire le cas d'utilisation.</p>
+                    <p>Pour plus d'informations veuillez regarder le TD1 il y a des exemples !</p>
+                    <h3>Compléter le diagramme d'utilisation avec les nouvelles informations</h3>
+                    <p>Voici les nouvelles informations : </p>
+                    <ol><li>Les mécaniciens peuvent consulter toutes les fiches suiveuses et à partir d'une fiche suiveuse, ils peuvent accéder aux travaux antérieurs sur cette voiture. En particulier lorsqu'ils modifient la fiche suiveuse, ils peuvent avoir accès aux travaux antérieurs.</li>
+   <li> Afin de prendre en compte le contexte du garage, le personnel doit pouvoir s'identifier en saisissant son login et mot de passe, en présentant son badge ou par reconnaissance faciale.</li>
+    <li>Seul le personnel du garage peut accéder au SI du garage.</li>
+    <li>Prendre un RDV exige d'identifier le véhicule. L'identification du véhicule correspond soit à retrouver le dossier soit à saisir les informations nécessaires dont le modèle du véhicule et sa plaque d'immatriculation.</li></ol>
+                        <p>Dans le cas 1 nous avons un extend, un moyen de pouvoir trouver un extend est de faire un cas d'utilisation donnant la possibilité de faire autre chose. Le verbe pouvoir nous aide mais il ne suffit pas d'avoir ce verbe il faut qu'il y ait une action avant.<br/>
+                        On va avoir donc :</p>
+                          <p><img src="../Image/extendmeca.png" alt="Mon image" height="300" width="700"></p>
+                    
+                   <p>Dans le cas 2 il va falloir faire un acteur personnel et faire une relation de généralisation car le mécanicien, la secrétaire et le chef d'atelier joue le rôle de personnel. Le personnel est capable de s'identifier donc en faisant ça le mécanicien, la secrétaire et le chef d'atelier pourront s'identifier. Pour pouvoir s'identifier il faut soit saisir son login et son mot de passe soit présenter son badge ou soit par reconnaissance faciale. Il y a donc là aussi une relation de généralisation, nous avons vu que la relation de généralisation entre acteur et entre cas d'utilisation n'ont pas la même signification. Ici il va y avoir une relation de généralisation entre s'identifier et les trois autres cas d'utilisation qui sont par login et mot de passe, par reconnaissance faciale ou encore par badge, il est obligatoire de le faire pour prendre en compte le contexte du garage mais il a le choix de comment le faire.<br/>
+                        Nous allons donc avoir ceci :</p>
+                        <p><img src="../Image/cas2td2.png" alt="Mon image" height="300" width="700"></p>
+                        <p>Dans le cas 3 nous allons rien ajouter.</p>
+                        <p>Le cas 4 est un include car pour prendre rendez-vous il est obligatoire d'identifier le véhicule, nous allons donc avoir une relation d'include entre le cas d'utilisation "Prendre rendez-vous" et "Identifier véhicule". De plus nous allons avoir une relation de généralisation entre "Identifier le véhicule" et "Fournir les informations" qui a lui même une relation avec Catalogue. On ne modélise pas le "Retrouver dossier" car ça n'a pas d'impact sur notre système. <br/>
+                        Nous allons donc avoir ceci :</p>
+                         <p><img src="../Image/cas4td2.png" alt="Mon image" height="300" width="600"></p>
+                        <p>Après avoir améliorer notre diagramme d'utilisation on aura donc ceci :</p>
+                         <p><img src="../Image/Diagutilisation2.png" alt="Mon image" height="300" width="600"></p>
+                        <h3>Compléter le glossaire</h3>
+                        <p>Dans le diagramme de cas d'utilisation si dessus il a été introduit plusieurs termes qu'il ne faut pas oublier de définir.</p><p>On avait un glossaire qui ressemblait à ceci.</p>
+                    <p>Client : Un tiers demandant la réparation/révision de sa voiture. <br/>
+                    Système de paiement : Service externe de paiement.<br/>
+                    Fiche suiveuse : Fiche contenant les détails des réparations révisions effectuées.<br/>
+                    Puce : Système externe permettant l’identification de la voiture.<br/>
+                    Catalogue : Système externe permettant de donner des informations à notre système.<br/>
+                    S’identifier : Se connecter au système.<br/>
+                    Préparer une fiche : Créer une fiche suiveuse.<br/>
+        </p>
+                        <p>Nous allons ajouter des termes comme : <br/>
+                        Vérifier le mot de passe<br/>
+                        Identifier un véhicule<br/>
+                        </p>
+                        <p>Nous allons donc avoir ceci :</p>
+                        <p>Client : Un tiers demandant la réparation/révision de sa voiture. <br/>
+                    Système de paiement : Service externe de paiement.<br/>
+                    Fiche suiveuse : Fiche contenant les détails des réparations révisions effectuées.<br/>
+                    Puce : Système externe permettant l’identification de la voiture.<br/>
+                    Catalogue : Système externe permettant de donner des informations à notre système.<br/>
+                    S’identifier : Se connecter au système.<br/>
+                    Préparer une fiche : Créer une fiche suiveuse.<br/>
+                    Vérifier le mot de passe : S'identifier en saisissant le login et le mot de passe donc un login et un mot de passe valide.<br/>
+                    Identifier un véhicule : Retrouver le dossier du véhicule ou saisir les informations nécessaires du véhicule comme la plaque d'immatriculation ou encore le modèle.
+                        </p>
+                        <h3>Interface graphique</h3>
+                        <p>Une interface graphique est la manière dont est présenté un logiciel à l'écran pour l'utilisateur. L'interface graphique doit être intuitive pour l'utilisateur, facile à utiliser et sans oublie. Notre but est de faire l'interface graphique du mécanicien lorsqu'il remplit la fiche suiveuse.</p>
+                        <p>Le premier affichage est l'identification car le mécanicien doit s'identifier pour savoir qu'il est un mécanicien. Le mécanicien peut s'identifier de différentes manières,soit par login et mot de passe soit par le badge soit par reconnaissance faciale <br/>Donc on aura ceci :</p><p><img src="../Image/interfaceetape1.png" alt="etape1"></p>
+                        <p>Puis ensuite en cliquant sur les différentes manières de s'identifier on aura ceci :</p>
+                        <p><img src="../Image/interfaceetape2.png" alt="etape2"></p>
+                        <p>Après la connection on aura les informations sur le mécanicien, son prénom, son nom, son âge et son pouvoir de consulter la fiche suiveuse. Pour consulter une fiche suiveuse il doit cliquer sur "consulter une fiche suiveuse" et ensuite sur valider</p>
+                         <p><img src="../Image/interfaceetape3.png" alt="etape3"></p>
+                        <p>Après avoir fait ça il sera redirigé sur les fiches suiveuses dans la barre à droite il y aura différentes fiches suiveuses s'il clique sur l'une d'elle elle va s'afficher à droite et il aura la possibilité de la modifier. Tout à droite c'est une scroll bar. N'oublions pas que quand il consulte ou modifie une fiche suiveuse il a la possibilité de voir les travaux intérieurs. Ici par exemple la fiche suiveuse 3 est séléctionnée et affichée à gauche</p>
+                        <p><img src="../Image/interfaceetape4.png" alt="etape4"></p>
+                        
+                        <p>L'interface donne donc ceci :</p>
+                        <p><img src="../Image/interfacecom.png" alt="interface"></p>
+                        
+                        <h3>Diagramme de packages</h3>
+                        <p>Le package comme son nom l'indique met en paquet plusieurs cas d'utilisation ayant des similitudes. <br/>
+                        Dans notre diagramme de cas d'utilisation on voit qu'on peut diviser les cas d'utilisations en différentes parties. On peut faire un package identification qui permet au personnel de s'identifier, un autre client qui sont les cas d'utilisations du client ensuite le secretariat qui sont les actions de la secrétaire et également un package mécanicien qui englobe les cas d'utilisation du mécanicien. On peut faire un package chef d'atelier qui englobe tous les cas d'utilisation du mécanicien ainsi que celle du chef d'atelier, on peut dire que le package mécanicien est contenu de celui du chef d'atelier. Il ne faut surtout pas oublier le package SI qui englobe tous les cas d'utilisations.<br/> Si on applique on obtient ceci : <br/></p>
+                        <p><img src="../Image/usecasefinal.png" alt="usecasefinal" height="400" width="700"></p>
+                        <h3>Erreur à ne pas commetre</h3>
+                        <p>Oublier le bouton valider dans l'interface dans certains cas. Sans ça on ne peut pas être redirigé.</p>
+                 </article>
+               
+             </div>
+                 
+        
+            
+            
+            <!-- Footer -->
+					<footer class="conteneur"> 
+						<section class="baspage">
+                          
+								  <ul class="iut"><li><img src="../Image/sophia.png" alt="iut" height="60" width="80"></li>
+                                      <li><img src="../Image/iut.png" alt="logo" height="80" width="60"></li>
+                                      
+                                  </ul>
+                              <div class="auteur"><h2>Auteur</h2>
+                            <p>Rédigé par BEN EL BEY Yessine</p></div>
+                                   
+                            
+								  <ul class="social">
+                                    <li><a href="https://www.google.com/intl/fr/gmail/about/" target="_blank">
+                                        <img src="../Image/gmail.png" alt="gmail" height="42" width="42"></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank">
+                                        <img src="../Image/facebook.png" alt="facebook" height="42" width="42"></a></li>
+                                    <li><a href="https://discordapp.com/" target="_blank">
+                                        <img src="../Image/discord.png" alt="discord" height="42" width="42"></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank">
+                                        <img src="../Image/twitter.png" alt="twitter" height="42" width="42"></a></li>
+                                  </ul>
+                            
+				         </section>
+					</footer>
+        
+     
+    
+
+    </div>
+</body>
+    
+</html>

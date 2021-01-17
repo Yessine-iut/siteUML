@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang = 'fr' >
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="../Styles/td.css" />
+    <title>TD7</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="section">
+        <header>
+            <img src="../Image/uml.jpg" alt="Mon image" height="300" width="801">
+       
+           
+            <nav class="sommaire">
+                <ul>
+                   <li><a href="../Index.html"> <img src="../Image/home.png" alt="Home" height="30"></a></li>
+                   <li><a> Travaux dirigés</a><ul><li><a href="../TD1/td1.html">TD1</a></li><li><a href="../TD2/td2.html">TD2</a></li><li><a href="../TD3/td3.html">TD3</a></li><li><a href="../TD4/td4.html">TD4</a></li>
+                    <li><a href="../TD5/td5.html">TD5</a></li><li><a href="../TD6/td6.html">TD6</a></li><li><a href="td7.html">TD7</a></li><li><a href="../TD8/td8.html">TD8</a></li></ul></li>
+                   
+                    
+                    <li><a href="../QCM/qcm.html"> Auto-évaluation </a> </li>
+                    <li> <a href="../a_propos.html"> À propos </a></li>
+                    </ul>    
+            </nav></header></div>
+      
+             <div class="corps">   
+                <article>
+            <h2>Des modèles aux codes</h2>
+                    <p>Ce TD a pour but de vous apprendre à coder en ayant la conception.</p>
+                    <p>Pour coder il faut se répartir les tâches et pas n'importe comment car plusieurs classes sont liés, donc les sous codes dépendront beaucoup des autres sous code. Il faut faire des packages et chacun code un package il y aura des relations qu'on ne pourra pas coder seul mais ces relations seront le moins nombreuses qu'on puisse faire.</p>
+                    <p>Vous avez la possibilité d'obtenir le code avec modélio.</p>
+                    <p>Voici une classe dans un diagramme de classe et comment elle est implémenté dans le code :</p>
+                     <p><img src="../Image/classclient.gif" alt="client" ></p>
+                    <p><img src="../Image/exemplecode.png" alt="client" height="200" width="200"></p>
+                    <p>Voici un diagramme de classe qu'on complétera au fur et à mesure :</p>
+                    <p><img src="../Image/td7engin.png" alt="enginclass" ></p>
+                    <p>Le code aura donc deux classes :<br/>
+                    Engin<br/>
+                    Position</p>
+                    <p>La classe engin aura trois attributs en private qui sont name, power et une position (dû à la relation) et une méthode move prenant en paramètre deux entiers.<br/>
+                    La classe position aura deux attributs x et y.</p>
+                           <p><img src="../Image/td7diagclass2.png" alt="td7diagclass2" ></p>
+                    <p>On aura après ça une nouvelle classe Armada contenant un tableau d'engin car on a pour cardinalité 1.*. On va rajouter une méthode attack() dans la classe Engin et également dans la classe Armada car la classe Armada peut attaquer car c'est plusieurs Engins. </p>
+                    <p>Voici le diagramme de séquence :</p>
+                     <p><img src="../Image/diagsequencetd7.png" alt="td7sequence"  height="400" width="700"></p>
+                    <p>Après avoir vu le diagramme de séquence on devra rajouter en classe : Strategy, Army et position.</p>
+                    <p>Le diagramme de classe ressemblera donc à ceci :</p>
+                    <p><img src="../Image/arm%C3%A9eclassdiagram.png" alt="td7sequence"  height="400" width="700"></p>
+                    <p>Et on aura pour code :</p>
+                    
+                  
+        </article>
+               
+             </div>
+                 
+        
+            
+            
+            <!-- Footer -->
+					<footer class="conteneur"> 
+						<section class="baspage">
+                          
+								  <ul class="iut"><li><img src="../Image/sophia.png" alt="iut" height="60" width="80"></li>
+                                      <li><img src="../Image/iut.png" alt="logo" height="80" width="60"></li>
+                                      
+                                  </ul>
+                              <div class="auteur"><h2>Auteur</h2>
+                            <p>Rédigé par BEN EL BEY Yessine</p></div>
+                                   
+                            
+								  <ul class="social">
+                                    <li><a href="https://www.google.com/intl/fr/gmail/about/" target="_blank">
+                                        <img src="../Image/gmail.png" alt="gmail" height="42" width="42"></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank">
+                                        <img src="../Image/facebook.png" alt="facebook" height="42" width="42"></a></li>
+                                    <li><a href="https://discordapp.com/" target="_blank">
+                                        <img src="../Image/discord.png" alt="discord" height="42" width="42"></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank">
+                                        <img src="../Image/twitter.png" alt="twitter" height="42" width="42"></a></li>
+                                  </ul>
+                            
+				         </section>
+					</footer>
+        
+     
+    
+
+    </div>
+</body>
+    
+</html>

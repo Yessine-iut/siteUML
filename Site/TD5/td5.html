@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang = 'fr' >
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="../Styles/td.css" />
+    <title>TD5</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="section">
+        <header>
+            <img src="../Image/uml.jpg" alt="Mon image" height="300" width="801">
+       
+           
+            <nav class="sommaire">
+                <ul>
+                   <li><a href="../Index.html"> <img src="../Image/home.png" alt="Home" height="30"></a></li>
+                   <li><a> Travaux dirigés</a><ul><li><a href="../TD1/td1.html">TD1</a></li><li><a href="../TD2/td2.html">TD2</a></li><li><a href="../TD3/td3.html">TD3</a></li><li><a href="../TD4/td4.html">TD4</a></li>
+                    <li><a href="td5.html">TD5</a></li><li><a href="../TD6/td6.html">TD6</a></li><li><a href="../TD7/td7.html">TD7</a></li><li><a href="../TD8/td8.html">TD8</a></li></ul></li>
+                    
+                   <li><a href="../QCM/qcm.html"> Auto-évaluation </a> </li>
+                    <li> <a href="../a_propos.html"> À propos </a></li>
+                    </ul>    
+            </nav></header></div>
+      
+             <div class="corps">   
+                <article>
+             <h2>Modélisation du domaine - Approfondissement</h2>
+                    <h3>Rappel</h3>
+                    <p>Un diagramme de classe est composé de classes et de relations, il existe plusieurs types de relations : <br/></p>
+                    <p>Relation bidirectionnelle : permet l'accessibilité aux deux classes qui sont reliés entre elles.</p>
+                    <p>Relation unidirectionnelle : permet l'accessibilité à seulement une des classe qui possède cette relation.</p>
+                    <p>Relation d'agrégation : relation forte permet de rendre important une classe par rapport à une autre.</p>
+                    <p></p>Relation de composition : relation très forte permet de rendre important une classe à une autre et si la classe importante disparaît alors l'autre également.</p>
+                <p>Les cardinalités permettent de représenter le nombre minimum et maximum d'instances qui sont autorisées à participer à la relation. Les cardinalités sont représentés par des nombres donnant le nombre minimum et le nombre maximum présentés à chaque extremité de l'association. </p>
+                 <h3>Avancement du diagramme de classe</h3>
+                 <ol><li>Une réparation peut être commencée à une date donnée et terminée à une date donnée. Tant qu'elle n'est pas commencée, il n'y a pas de date de début, de même tant qu'elle n'est pas finie, il n'y a pas de date de fin. Une durée est associée à une réparation terminée. Il est possible de calculer le temps maximum passé sur une réparation (temps entre le début et la fin de la réparation); c'est le temps par défaut pour la durée de la réparation, lorsque la durée de la réparation n'est pas renseignée. </li></ol>
+                 <p>Un client qui demande où en est la réparation de sa voiture est averti : </p>
+                 <p>2. que sa voiture est réparée, si toutes les réparations associées à sa fiche suiveuse en cours sont terminées, dans ce cas, il peut connaitre le temps passé sur sa voiture;<br/>
+                     3. que la facture est prête, ce qui n'est possible que si toutes les réparations ont été faîtes;<br/>
+                     4. que les réparations sont en cours ou n'ont pas encore commencées.</p>
+                 <p>Cas 1 : On va ajouter en attribut un début de réparation notée "debutrep" ,une fin de réparation notée "finrep" et une durée. On va donc avoir ceci : </p>
+                 <p><img src="../Image/reparation.png" alt="reparation" ></p>
+                 <p>Cas 2 : On va ajouter deux méthodes permettant de voir la durée et de voir les réparations dans client car c'est lui qui a la possibilité de faire ceci. On aura donc :</p>
+                 <p><img src="../Image/client.png" alt="client" ></p>
+                 <p>Cas 3 et 4 : on a rien à changer car client est associé à facture ainsi que réparation donc il peut voir si les réparations sont en cours ou n'ont pas encore commencées ainsi que si la facture est prête.</p>
+                 <p>Le diagramme de classe final sera donc comme ceci : </p>
+                 
+                 <p><img src="../Image/diagclassefinal.png" alt="final"  height="400" width="700"></p>
+                 <h3>Erreur à ne pas commetre</h3>
+                 <p>Chaque rôle n'est pas une classe, ça serait une erreur de mettre des rôles qui n'agissent pas en tant que classe dans un diagramme de classe.</p>
+                 
+                 
+                    
+        </article>
+               
+             </div>
+                 
+        
+            
+            
+            <!-- Footer -->
+					<footer class="conteneur"> 
+						<section class="baspage">
+                          
+								  <ul class="iut"><li><img src="../Image/sophia.png" alt="iut" height="60" width="80"></li>
+                                      <li><img src="../Image/iut.png" alt="logo" height="80" width="60"></li>
+                                      
+                                  </ul>
+                              <div class="auteur"><h2>Auteur</h2>
+                            <p>Rédigé par BEN EL BEY Yessine</p></div>
+                                   
+                            
+								  <ul class="social">
+                                    <li><a href="https://www.google.com/intl/fr/gmail/about/" target="_blank">
+                                        <img src="../Image/gmail.png" alt="gmail" height="42" width="42"></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank">
+                                        <img src="../Image/facebook.png" alt="facebook" height="42" width="42"></a></li>
+                                    <li><a href="https://discordapp.com/" target="_blank">
+                                        <img src="../Image/discord.png" alt="discord" height="42" width="42"></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank">
+                                        <img src="../Image/twitter.png" alt="twitter" height="42" width="42"></a></li>
+                                  </ul>
+                            
+				         </section>
+					</footer>
+        
+     
+    
+
+    </div>
+</body>
+    
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang = 'fr' >
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="../Styles/td.css" />
+    <title>TD4</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="section">
+        <header>
+            <img src="../Image/uml.jpg" alt="Mon image" height="300" width="801">
+       
+           
+            <nav class="sommaire">
+                <ul>
+                    <li><a href="../Index.html"> <img src="../Image/home.png" alt="Home" height="30"></a></li>
+                   <li><a> Travaux dirigés</a><ul><li><a href="../TD1/td1.html">TD1</a></li><li><a href="../TD2/td2.html">TD2</a></li><li><a href="../TD3/td3.html">TD3</a></li><li><a href="td4.html">TD4</a></li>
+                    <li><a href="../TD5/td5.html">TD5</a></li><li><a href="../TD6/td6.html">TD6</a></li><li><a href="../TD7/td7.html">TD7</a></li><li><a href="../TD8/td8.html">TD8</a></li></ul></li>
+                   
+                    
+                   
+                    <li><a href="../QCM/qcm.html"> Auto-évaluation </a> </li>
+                    <li> <a href="../a_propos.html"> À propos </a></li>
+                    </ul>    
+            </nav></header></div>
+      
+             <div class="corps">   
+                <article>
+             <h2>Qu'est ce qu'un diagramme de classe ?</h2>
+                    <p>Le diagramme de classe est le plus important au point de vu de la modélisation, il montre le la structure interne. Le diagramme de classe est la modélisation la plus proche du code.<br/>
+                    Le diagramme de classe contient des classes et des relations entre les classes.</p>
+                    <h3>Les classes</h3>
+                    <p>Une classe contient des attributs et des méthodes. Une classe est représenté par un rectangle avec tout en haut le nom de la classe suivi des attributs et pour finir des méthodes. Les attributs sont des informations que la classe doit connaître. Une méthode est une opération que la classe contient.Voici la représentation schématique d'une classe : <br/></p>
+                    <p><img src="../Image/classe.gif" alt="classe" ></p>
+                    <p>Le nom de la classe doit obligatoirement commencer par une majuscule,une classe peut avoir son nom en italique cela signifie qu'on modélise une classe abstraite.<br/>
+                 On peut également modéliser l'encapsulation des attributs et des méthodes.<br/>
+                    Public : +<br/>
+                    Protected : #<br/>
+                    Private : -</p>
+                    <p>Public ça signifie que tout le monde peut accéder à l'attribut ou la méthode, protocted l'élément peut être accedé seulement si l'élement est situé dans le conteneur ou qu'un de ses descendants peut y accéder et private seul un élément dans le conteneur peut voir l'élement.</p>
+                    <h3>Les relations</h3>
+                    <p>Les relations sont representés par un trait (bidirectionnel) qui permet de lier des classes, on peut limiter la navigation en mettant une flèche à la place (unidirectionnel). Il existe différents types de relations entre les classes : </p>
+                        <h4>L'héritage</h4>
+                    
+                    <p>L'héritage est modélisé par une flèche pleine blanche. La flèche part de la classe qui hérite de tous les attributs et méthode de la classe qui est pointé par la flèche. Exemple :<br/> </p>
+                    <p><img src="../Image/heritage.png" alt="heritage" ></p>
+                    <p>Les classes voiture et camion héritent de véhicule donc la classe voiture possède nombre de passage, poids et vitesse en attrbut et avance et allume radio en méthode. La classe camion possède poids, vitesse et cargaison en attribut ainsi que avance et charge cargaison en méthode.</p>
+                    <h4>La multiplicité</h4>
+                    <p>On appelle la multiplicité les cardinalités, les cardinalités sont les nombres qui sont dans les deux extrémités de la flèche. Exemple de cardinalité :<br/>
+                        * cela signifie 0 ou plusieurs<br/>
+                        1..* cela signifie 1 ou plusieurs<br/>
+                        1 cela signifie un et un seul<br/>
+                        0..1 cela signifie 0 ou 1
+                        </p>
+                    <p>Exemple schématique :</p>
+                    <p><img src="../Image/multiplicite.png" alt="multiplicite" ></p>
+                    <p>Un aéroport possède une ou plusieurs villes alors qu'une ville possède aucun ou plusieurs aéroport dans cet exemple.</p>
+                    <p>On peut avoir des relations qu'on nomm reflexive avec des cardinalités. Une relation reflexive c'est une relation qui va commence et fini par la même classe.</p>
+                    <p>Exemple :</p>
+                    <p><img src="../Image/reflexive.jpg" alt="refle"></p>
+                        <p>Une personne possède deux parents qui sont des personnes et possède aucun ou plusieurs enfants qui sont également des personnes donc on a une relation reflexive.</p>
+                    <h4>Agrégation</h4>
+                    <p>L'agrégation est représenté par un losange blanc suivi d'une flèche, il permet de représenter une importance d'une des classes dans la relation. Elle exprime une relation forte de type "Ensemble/element"</p>
+                    <p>Exemple :</p>
+                    <p><img src="../Image/agregation.png" alt="agrega"></p>
+                    <p>La voiture est plus importante que le moteur, le moteur est contenu dans la voiture mais si la voiture disparait le moteur existera toujours car c'est une relation d'agrégation.</p>
+                    <h4>Composition</h4>
+                    <p>La relation de composition est une relation très forte entre deux classes et représente l'importance d'une des classe, si la classe importante disparaît alors la classe qui a un lien de composition avec celle-ci sera détruite. Elle se modèlise par un losange noir suivi d'un trait.</p>
+                    <p>Exemple de composition :</p>
+                    <p><img src="../Image/composition.png" alt="composition"></p>
+                    <p>S'il n'y a plus d'échiquier alors il n'y aura plus de case.</p>
+                    <h3>Faire le diagramme de classe du smart garage</h3>
+                    <ol><li>Un véhicule est associé à un client et à un modèle de véhicule. </li>
+                    <li>Le temps des réparations, une puce est associée au véhicule. Une puce a un numéro d'identification. </li>
+                    <li>Une fiche suiveuse est associée à un véhicule. Elle fait référence à un ensemble de réparations. Une réparation est définie par un mot clef et une description textuelle et son état : en attente, en cours, terminée, ou abandonnée. </li>
+                    <li>Un commentaire peut être associé à une réparation, il peut contenir des photos.  </li>
+                    <li>Un ou des mécaniciens sont associés à une réparation.</li></ol>
+                    <p>On va donc avoir ceci :</p>
+                    <p><img src="../Image/diagclassintermediaire.png" alt="classei" height="400" width="700"></p>
+                    <p>Cas 1 : Un véhicule est associé à un client et à un modèle de véhicule, on voit qu'il y a une relation entre véhicule et client et véhicule et modèle de véhicule dans le diagramme de classe.<br/>
+                    Cas 2 : Le temps des réparations, une puce est associée au véhicule. Une puce a un numéro d'identification. Nous n'avons pas représentés la puce en tant que classe car ce n'est pas necessaire il est plus simple de mettre un identifiant au véhicule, l'identifiant joue le rôle de la puce.<br/>
+Cas 3 : Une fiche suiveuse est associée à un véhicule. Elle fait référence à un ensemble de réparations. Une réparation est définie par un mot clef et une description textuelle et son état : en attente, en cours, terminée, ou abandonnée. Dans le diagramme de classe nous avons associés fiche suiveuse et véhicule, on nous dit que la fiche suiveuse fait référence à un ensemble de réparations donc il y a une relation entre fiche suiveuse et réparations avec pour cardinalité une réparation possède une fiche suiveuse et une fiche suiveuse possède 0 ou plusieurs réparations.<br/>
+                    Cas 4 : Un commentaire peut être associé à une réparation, il peut contenir des photos. Nous avons donc mit en relation commentaire et réparation, un commentaire n'a qu'une et une seule réparation par contre réparation peut avoir 0 ou plusieurs commentaires, de plus on a mit une composition car si on détruit la classe réparation alors le commentaire n'existerait plus, nous avons rajoutés une classe photo car les commentaires peuvent contenir des photos et on également mit une composition car si le commentaire est supprimé la photo aussi.<br/>
+                    Cas 5 : Un ou des mécaniciens sont associés à une réparation. On a fait donc une relation entre réparation et mécanicien avec pour cardinalité 1 dans réparation et 1 ou plusieurs pour le mécanicien.</p>
+                    <p>Nous n'avons pas oubliés d'ajouter les informations des TD précédents tel que l'hérédité entre mécanicien et chef d'atelier. la secretaire n'est pas dans le diagramme de classe car elle ne fait rien, on peut tout modéliser sans l'avoir en tant que classe.<br/> Rappel : Un rôle n'est pas forcément une classe.</p>
+                    <h3>A retenir</h3>
+                    <p>La composition dans un diagramme de classe est une relation très forte qui implique que si la classe qui est composé de est supprimé alors les composants sont aussi supprimés.<br/>
+                    Généralement les attributs sont privés donc possèdent un signe " - " en face de leur nomination.</p>
+                    <h3>Erreur à ne pas faire</h3>
+                    <p>Echangez la position des cardinalités ! Attention ce n'est pas comme base de données.
+                    </p>
+                    
+        </article>
+               
+             </div>
+                 
+        
+            
+            
+            <!-- Footer -->
+					<footer class="conteneur"> 
+						<section class="baspage">
+                          
+								  <ul class="iut"><li><img src="../Image/sophia.png" alt="iut" height="60" width="80"></li>
+                                      <li><img src="../Image/iut.png" alt="logo" height="80" width="60"></li>
+                                      
+                                  </ul>
+                              <div class="auteur"><h2>Auteur</h2>
+                            <p>Rédigé par BEN EL BEY Yessine</p></div>
+                                   
+                            
+								  <ul class="social">
+                                    <li><a href="https://www.google.com/intl/fr/gmail/about/" target="_blank">
+                                        <img src="../Image/gmail.png" alt="gmail" height="42" width="42"></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank">
+                                        <img src="../Image/facebook.png" alt="facebook" height="42" width="42"></a></li>
+                                    <li><a href="https://discordapp.com/" target="_blank">
+                                        <img src="../Image/discord.png" alt="discord" height="42" width="42"></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank">
+                                        <img src="../Image/twitter.png" alt="twitter" height="42" width="42"></a></li>
+                                  </ul>
+                            
+				         </section>
+					</footer>
+        
+     
+    
+
+    </div>
+</body>
+    
+</html>

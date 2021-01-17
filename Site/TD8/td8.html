@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang = 'fr' >
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="../Styles/td.css" />
+    <title>TD8</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="section">
+        <header>
+            <img src="../Image/uml.jpg" alt="Mon image" height="300" width="801">
+       
+           
+            <nav class="sommaire">
+                <ul>
+                   <li><a href="../Index.html"> <img src="../Image/home.png" alt="Home" height="30"></a></li>
+                   <li><a> Travaux dirigés</a><ul><li><a href="../TD1/td1.html">TD1</a></li><li><a href="../TD2/td2.html">TD2</a></li><li><a href="../TD3/td3.html">TD3</a></li><li><a href="../TD4/td4.html">TD4</a></li>
+                    <li><a href="../TD5/td5.html">TD5</a></li><li><a href="../TD6/td6.html">TD6</a></li><li><a href="../TD7/td7.html">TD7</a></li><li><a href="td8.html">TD8</a></li></ul></li>
+                  
+                   
+                    
+                   <li><a href="../QCM/qcm.html"> Auto-évaluation </a> </li>
+                    <li> <a href="../a_propos.html"> À propos </a></li>
+                    </ul>    
+            </nav></header></div>
+      
+             <div class="corps">   
+                <article>
+            <h2>Finale</h2>
+                    <p>Nous avons vu précédemment comment passer de la conception au code et du code à la conception, ce TD va également avoir le même but que le précédent cependant qu'il sera complet, on aura un exemple il faudra fait le cas d'utilisation, le diagramme de classe et également le code.</p>
+                    <h3>La class "journey"</h3>
+                    <ul><li>Un internaute peut s'inscrire à l'application en utilisant son compte facebook ou twitter ou un formulaire dédié.</li><li>Un membre peut enregistrer son parcours : <ol><li>il déclare sur son téléphone qu'il commence à enregistrer un parcours;</li><li>toutes les 10 secondes, le système crée un nouveau point automatiquement en demandant au GPS du téléphone sa position et l'heure actuelle; le point est ajouté au parcours en cours; Les coordonnées GPS sont des coordonnées sur une sphère et pas des coordonnées cartésiennes, cependant dans le cadre de ce TD, travaillez “simplement” avec des coordonnées cartésiennes;</li><li>le membre signale la fin du parcours qui est automatiquement enregistré dans sa base de parcours.</li></ol></li><li>Un membre peut visualiser les parcours passés : par la distance parcourue, la durée, la vitesse moyenne, la date (jour et heure), le type d'entrainement, … </li><li>Un membre peut demander à visualiser un parcours en utilisant googleMAP.</li><li>Un membre peut savoir quand il était le plus proche d'un point donné lors d'un parcours.</li><li>Un membre peut savoir où il était à une date particulière : le système renvoie la position enregistrée à la date la plus proche.</li><li>Un membre peut préciser qu'il veut enregistrer un parcours d'entrainement; dans ce cas, avant le départ, il précise le mode d'entrainement. Pour chaque mode, un temps de relevé des points différent est prévu : marche rapide (2mn), course à pied (10s), vélos (5s), foot (10s), …</li><li>Un membre peut créer son propre mode d'entrainement en précisant les temps de consultation etc.</li><li>Un membre qui a précisé son compte twitter, peut demander en début de parcours, que chaque relevé de point soit automatiquement “tweetté” avec le message “Je suis en position …”.</li></ul>
+                    <p>Il faut donc commencer à faire la conception pour ensuite coder.</p>
+                    <p>Avec tout ce qu'on a vu précédemment en mettant les packages on aura pour diagramme de cas d'utilisation :</p>
+                     <p><img src="../Image/TD8_UseCase.png" alt="use" height="500" width="700" ></p>
+                    <p>Si vous avez besoin d'un rappel pour les diagrammes de cas d'utilisation veuillez voir le TD1.</p>
+                    <p>Et on aura pour diagramme de classe :</p>
+                    <p><img src="../Image/TD8_DiagrammeDeClasse.png" alt="use" height="300" width="600"></p>
+                    <p>Si vous avez besoin d'un rappel pour le diagramme de classes veuillez voir le TD4</p>
+                    <p>Après avoir vu le TD précédent nous aurons pour code :</p>
+                      <p ><img src="../Image/codeTD8.png" alt="use">
+                     <img  src="../Image/code2TD8.png" alt="use" >
+                      <img src="../Image/code3.png" alt="use"></p>
+                    
+                    <p>Il ne faut pas oublier de tester donc il faut également un main.</p>
+                    <h3>Erreur à ne pas faire</h3>
+                    <p>Nominez les attributs et les classes dans votre code comme dans la conception pour qu'il n'y ait pas confusion.<br/>
+                    Si vous êtes bloqués au code n'essayez pas d'improviser, souvent c'est dû à la conception.</p>
+                    
+        </article>
+               
+             </div>
+                 
+        
+            
+            
+            <!-- Footer -->
+					<footer class="conteneur"> 
+						<section class="baspage">
+                          
+								  <ul class="iut"><li><img src="../Image/sophia.png" alt="iut" height="60" width="80"></li>
+                                      <li><img src="../Image/iut.png" alt="logo" height="80" width="60"></li>
+                                      
+                                  </ul>
+                              <div class="auteur"><h2>Auteur</h2>
+                            <p>Rédigé par BEN EL BEY Yessine</p></div>
+                                   
+                            
+								  <ul class="social">
+                                    <li><a href="https://www.google.com/intl/fr/gmail/about/" target="_blank">
+                                        <img src="../Image/gmail.png" alt="gmail" height="42" width="42"></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank">
+                                        <img src="../Image/facebook.png" alt="facebook" height="42" width="42"></a></li>
+                                    <li><a href="https://discordapp.com/" target="_blank">
+                                        <img src="../Image/discord.png" alt="discord" height="42" width="42"></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank">
+                                        <img src="../Image/twitter.png" alt="twitter" height="42" width="42"></a></li>
+                                  </ul>
+                            
+				         </section>
+					</footer>
+        
+     
+    
+
+    </div>
+</body>
+    
+</html>
